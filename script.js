@@ -1,5 +1,5 @@
 function convertToRoman(num) {
-	const obj = {
+	let obj = {
 		0:['M',1000], 
 		1:['CM',900], 
 		2:['D', 500], 
@@ -15,24 +15,25 @@ function convertToRoman(num) {
 		12:['I', 1]
 	};
 
-	let romanNum = '';
-	for (let i=0;i<=obj.length;i++) {
-		console.log(obj[i][1]);
-		while(num>=obj[i][1]) {
-			romanNum += obj[i][0];
-			num -= obj[i][1];
+	let romanNum = "";
+	// for (let i = 0;i < obj.length; i++) {
+	// 	console.log(obj[i][0]);
+	// }
+	for (e in obj) {
+		while(num>=obj[e][1]) {
+			romanNum += obj[e][0];
+			num -= obj[e][1];
 		}
-	}
-	
+	};
 	return romanNum;
-
+	
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-console.log(convertToRoman(36));
+//console.log(convertToRoman(36));
 
 
 
 
 // do not edit below this line
-//module.exports = convertToRoman
+module.exports = convertToRoman
